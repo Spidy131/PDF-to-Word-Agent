@@ -7,10 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1bGuIz8TzIhnO7C0naWdBEpVyQWXuN6h3
 """
 
-
 import streamlit as st
 from converter import convert_pdf_to_docx
-import os
 
 st.title("PDF to Word Converter")
 
@@ -25,11 +23,8 @@ if uploaded_file:
 
     if st.button("Convert to Word"):
 
-        output_file = convert_pdf_to_docx(uploaded_file)
-
-        pdf_to_word(
-            uploaded_file,
-            output_file
+        output_file = convert_pdf_to_docx(
+            uploaded_file
         )
 
         st.success("Conversion Complete")
