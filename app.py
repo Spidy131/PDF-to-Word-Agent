@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1bGuIz8TzIhnO7C0naWdBEpVyQWXuN6h3
 """
 
-!pip install streamlit pymupdf python-docx
+
 import streamlit as st
 from converter import pdf_to_word
 import os
