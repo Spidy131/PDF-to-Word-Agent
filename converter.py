@@ -8,24 +8,19 @@ Original file is located at
 """
 
 
-import fitz
-from docx import Document
+from pdf2docx import Converter
 
 def convert_pdf_to_docx(uploaded_file):
 
-    pdf = fitz.open(
-        stream=uploaded_file.read(),
-        filetype="pdf"
-    )
+    pdf_path = "temp.pdf"
 
-    doc = Document()
+    with open(pdf_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
 
-    for page in pdf:
-        text = page.get_text()
-        doc.add_paragraph(text)
+    docx_path = "converted.docx"
 
-    output_path = "output.docx"
+    cv = Converter(pdf_path)
+    cv.convert(docx_path)
+    cv.close()
 
-    doc.save(output_path)
-
-    return output_path
+    return docx_path
