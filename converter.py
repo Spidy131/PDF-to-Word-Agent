@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1XHiHH9ZpgI7kQWopBsbUYivXFf5oUahR
 """
 
-!pip install streamlit pymupdf python-docx
+
 import fitz
 from docx import Document
 
