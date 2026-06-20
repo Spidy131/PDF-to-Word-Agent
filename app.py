@@ -25,7 +25,7 @@ if uploaded_file:
 
     if st.button("Convert to Word"):
 
-        output_file = "converted.docx"
+        output_file = convert_pdf_to_docx(uploaded_file)
 
         pdf_to_word(
             uploaded_file,
