@@ -9,7 +9,7 @@ Original file is located at
 
 
 import streamlit as st
-from converter import pdf_to_word
+from converter import convert_pdf_to_docx
 import os
 
 st.title("PDF to Word Converter")
