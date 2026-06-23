@@ -49,12 +49,14 @@ if uploaded_file is not None:
 
             with open(output_file, "rb") as file:
 
-                st.download_button(
-                    label="📥 Download Word File",
-                    data=file,
-                    file_name="converted.docx",
-                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                )
+            file_name = uploaded_file.name.replace(".pdf",".docx")
+
+            st.download_button(
+                label="📥 Download DOCX",
+                data=file,
+                file_name=file_name,
+                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            )
 
         except Exception as e:
 
