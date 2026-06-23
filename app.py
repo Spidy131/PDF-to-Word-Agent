@@ -48,15 +48,14 @@ if uploaded_file is not None:
             st.success("🎉 Conversion Completed Successfully!")
 
             with open(output_file, "rb") as file:
+                file_name = uploaded_file.name.replace(".pdf",".docx")
 
-            file_name = uploaded_file.name.replace(".pdf",".docx")
-
-            st.download_button(
-                label="📥 Download DOCX",
-                data=file,
-                file_name=file_name,
-                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            )
+                st.download_button(
+                    label="📥 Download DOCX",
+                    data=file,
+                    file_name=file_name,
+                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                )
 
         except Exception as e:
 
