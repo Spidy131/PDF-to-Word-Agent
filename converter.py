@@ -9,7 +9,7 @@ Original file is located at
 
 
 from pdf2docx import Converter
-
+import os
 def convert_pdf_to_docx(uploaded_file):
 
     pdf_path = "temp.pdf"
@@ -17,7 +17,8 @@ def convert_pdf_to_docx(uploaded_file):
     with open(pdf_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
 
-    docx_path = "converted.docx"
+    original_name = os.path.splitext(uploaded_file.name)[0]
+    docx_path = f"{original_name}.docx"
 
     cv = Converter(pdf_path)
     cv.convert(docx_path)
