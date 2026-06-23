@@ -26,11 +26,17 @@ uploaded_file = st.file_uploader(
     type=["pdf"]
 )
 
+
+
 # Conversion Logic
 if uploaded_file is not None:
 
     st.success("✅ PDF Uploaded Successfully")
-
+    st.info(f"""
+    File Name: {uploaded_file.name}
+    
+    Size: {round(uploaded_file.size/1024,2)} KB
+    """)
     if st.button("Convert to Word"):
 
         try:
